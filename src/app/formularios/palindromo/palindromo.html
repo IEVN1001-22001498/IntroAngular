@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 border p-4 rounded shadow-sm">
+            <h3 class="text-center mb-4">Palíndromo</h3>
+            
+            <form>
+                <div class="form-group mb-3">
+                    <label for="frase">Ingresa una frase:</label>
+                    <input [(ngModel)]="frase" name="frase" type="text" class="form-control" id="frase" placeholder="Ej. Anita lava la tina">
+                </div>
+
+                <div class="text-center pt-2">
+                    <button (click)="analizarFrase()" type="button" class="btn btn-primary">
+                        Analizar Frase
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-4" *ngIf="resultadoVocales">
+                <hr>
+                <p><strong>{{ resultadoVocales }}</strong></p>
+                <p class="text-muted">{{ listaVocales }}</p>
+
+                <p><strong>{{ resultadoConsonantes }}</strong></p>
+                <p class="text-muted">{{ listaConsonantes }}</p>
+
+                <p class="alert alert-info text-center"><strong>{{ resultadoPalindromo }}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
