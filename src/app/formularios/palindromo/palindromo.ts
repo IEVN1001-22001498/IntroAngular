@@ -14,17 +14,19 @@ export class Palindromo {
   listaConsonantes: string = '';
   resultadoPalindromo: string = '';
 
-  analizarFrase(): void {
+
+
+    analizarFrase(): void {
     let contVocales = 0;
     let vocalesEncontradas: string[] = [];
     let contConsonantes = 0;
     let consonantesEncontradas: string[] = [];
+    let soloLetras: string[] = [];
 
-    let caracteres = this.frase.split('');
-    let longitud = caracteres.length;
+    let longitud = this.frase.length;
 
     for (let i = 0; i < longitud; i++) {
-      let c = caracteres[i];
+      let c = this.frase[i];
       let cMin = this.aMinuscula(c);
 
       let esVocal = (
@@ -35,25 +37,19 @@ export class Palindromo {
       if (esVocal) {
         contVocales++;
         vocalesEncontradas.push(c);
+        soloLetras.push(cMin);
       } else if (this.esLetraValida(cMin)) {
         contConsonantes++;
         consonantesEncontradas.push(c);
+        soloLetras.push(cMin);
       }
     }
 
     this.resultadoVocales = `Número de vocales: ${contVocales}`;
     this.listaVocales = `Vocales: ${vocalesEncontradas.join(', ')}`;
-    
+
     this.resultadoConsonantes = `Número de consonantes: ${contConsonantes}`;
     this.listaConsonantes = `Consonantes: ${consonantesEncontradas.join(', ')}`;
-
-    let soloLetras: string[] = [];
-    for (let i = 0; i < longitud; i++) {
-      let cMin = this.aMinuscula(caracteres[i]);
-      if (this.esLetraValida(cMin)) {
-        soloLetras.push(cMin);
-      }
-    }
 
     let esPalindromo = true;
     let totalLetras = soloLetras.length;
@@ -70,7 +66,6 @@ export class Palindromo {
       this.resultadoPalindromo = "La cadena NO es un palíndromo.";
     }
   }
-
   aMinuscula(c: string): string {
     if (c === 'A') return 'a';
     if (c === 'E') return 'e';

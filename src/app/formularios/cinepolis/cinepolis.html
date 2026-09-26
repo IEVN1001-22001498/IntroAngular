@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+  <h2>Cinepolis</h2>
+  
+  <label>Nombre:</label>
+  <input type="text" [(ngModel)]="nombre" placeholder="Inserta tu nombre">
+  <br><br>
+
+  <label>Cantidad de boletos:</label>
+  <input type="number" [(ngModel)]="cantidad" min="1" max="7">
+  <br><br>
+
+  <label>¿Pago con tarjeta?</label>
+  <input type="checkbox" [(ngModel)]="tarjeta">
+  <br><br>
+
+  <button (click)="calcular()">Calcular Total</button>
+
+  <div *ngIf="resultado">
+    <p>{{ resultado }}</p>
+  </div>
+</div>
+</body>
+</html>

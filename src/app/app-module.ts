@@ -10,6 +10,7 @@ import { DistanciaComponent } from './formularios/distancia/distancia';
 import { FigurasComponent } from './formularios/areas/areas';
 import { Usuarios } from './formularios/usuarios/usuarios';
 import { Palindromo } from './formularios/palindromo/palindromo';
+import { Cinepolis } from './formularios/cinepolis/cinepolis';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { Palindromo } from './formularios/palindromo/palindromo';
     FigurasComponent,
     Usuarios,
     Palindromo,
+    Cinepolis,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
