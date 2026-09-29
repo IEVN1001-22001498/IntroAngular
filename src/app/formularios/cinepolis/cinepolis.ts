@@ -4,20 +4,24 @@ import { Component } from '@angular/core';
   selector: 'app-cinepolis',
   standalone: false,
   templateUrl: './cinepolis.html',
+  styleUrls: ['./cinepolis.css']
 })
 export class Cinepolis {
   nombre: string = '';
+  cantidadCompradores: number = 1;
   cantidad: number = 1;
   tarjeta: boolean = false;
   resultado: string = '';
 
-  calcular() {
-    if (this.cantidad > 7 || this.cantidad < 1) {
-      this.resultado = 'Error: Solo se pueden comprar de 1 a 7 boletos';
+  procesar() {
+    const maxBoletasPermitidas = this.cantidadCompradores * 7;
+
+    if (this.cantidad < 1 || this.cantidad > maxBoletasPermitidas) {
+      this.resultado = `Error: Máx. ${maxBoletasPermitidas} boletas`;
       return;
     }
 
-    const valorBoleto = 12000;
+    const valorBoleto = 12;
     let subtotal = this.cantidad * valorBoleto;
     let descuentoPorcentaje = 0;
 
@@ -28,13 +32,19 @@ export class Cinepolis {
     } else {
       descuentoPorcentaje = 0;    
     }
-
+    
     let valorDescuento = subtotal * (1 - descuentoPorcentaje);
-
     if (this.tarjeta) {
       valorDescuento *= 0.90;
     }
+    this.resultado = `$${valorDescuento.toFixed(2)}`;
+  }
 
-    this.resultado = `Comprador: ${this.nombre} Boletos: ${this.cantidad} Total a pagar: $${valorDescuento}`;
+  limpiar() {
+    this.nombre = '';
+    this.cantidadCompradores = 1;
+    this.cantidad = 1;
+    this.tarjeta = false;
+    this.resultado = '';
   }
 }

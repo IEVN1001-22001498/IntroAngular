@@ -1,0 +1,132 @@
+.pantalla-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #233b73;
+  background-image: url('./cinepolis-logo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.ventana-principal {
+  background-color: #2b4c8c; 
+  border: 3px outset #6c7a96;
+  padding: 20px;
+  width: 650px;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.7);
+}
+
+.titulo-cinepolis {
+  text-align: center;
+  background: white;
+  color: black;
+  width: 140px;
+  margin: 0 auto 15px auto;
+  border: 1px solid black;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.contenido-grid {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.marco {
+  background-color: #2b4c8c;
+  border: 1px solid white;
+  padding: 12px;
+  color: white;
+}
+
+.entradas {
+  flex: 1.3;
+}
+
+.salidas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+legend {
+  font-style: italic;
+  padding: 0 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.fila label, .fila-salida label {
+  color: white;
+}
+
+.fila input[type="text"],
+.fila input[type="number"] {
+  width: 130px;
+  background-color: #e0e0e0;
+  border: 1px solid #7f9db9;
+  padding: 2px 4px;
+}
+
+.radios {
+  display: flex;
+  gap: 15px;
+  width: 130px;
+}
+
+.fila-salida {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.input-resultado {
+  background-color: #fffacd !important;
+  font-weight: bold;
+  color: black;
+  width: 100%;
+  padding: 4px;
+}
+
+.acciones {
+  background-color: #2b4c8c;
+  margin-top: 5px;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 5px;
+}
+
+.acciones button {
+  padding: 5px 30px;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  border: 2px outset #a0a0a0;
+  font-weight: bold;
+  color: black;
+}
+
+.acciones button:active {
+  border: 2px inset #a0a0a0;
+}
